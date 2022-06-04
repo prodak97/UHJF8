@@ -31,9 +31,13 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json",
+            "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
             "production": {
@@ -99,9 +103,42 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "webWorkerTsConfig": "tsconfig.worker.json"
+          }
+        }
+      }
+    },
+    "disk": {
+      "projectType": "library",
+      "root": "projects/disk",
+      "sourceRoot": "projects/disk/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/disk/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/disk/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/disk/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/disk/src/test.ts",
+            "tsConfig": "projects/disk/tsconfig.spec.json",
+            "karmaConfig": "projects/disk/karma.conf.js"
           }
         }
       }

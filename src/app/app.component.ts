@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { WhiteRabitDirective } from './white-rabit.directive';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'UHJF8';
+  item = "display";
 }
